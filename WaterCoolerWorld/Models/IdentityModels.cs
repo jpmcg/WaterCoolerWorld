@@ -23,11 +23,17 @@ namespace WaterCoolerWorld.Models
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
+            Database.SetInitializer<ApplicationDbContext>(new DropCreateDatabaseAlways<ApplicationDbContext>());
         }
 
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<WaterCoolerWorld.Models.Cooler> Coolers { get; set; }
+
+        public System.Data.Entity.DbSet<WaterCoolerWorld.Models.Testimonial> Testimonials { get; set; }
+        public DbSet<WcwImage> Images { get; set; } 
     }
 }

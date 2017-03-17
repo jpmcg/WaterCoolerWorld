@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Water Cooler World</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><img class="top-logo" src="~/Images/logo.png"/></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>@Html.ActionLink("About Us", "Index", "Home")</li>
+                <li>@Html.ActionLink("Bottle Coolers", "Bottle", "Coolers")</li>
+                <li>@Html.ActionLink("Mains Coolers", "Mains", "Coolers")</li>
+                <li>@Html.ActionLink("Coffee Machines", "Coffee", "Coolers")</li>
+                <li>@Html.ActionLink("Contact Us", "Contact", "Home")</li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+  
+
+   @* <div class="container body-content">*@
+        @RenderBody()
+
+   @* </div>*@
+    <footer>
+        <div class="container">
+            <div class="row">
+                <h4 class="wcc-h4 text-center"><span>Watercooler World</span></h4>
+                <div class="col-sm-12 text-center">
+                    <p><b>Address: </b>Suite 3 Fountain Centre,<br />Collage Street,<br />Belfast BT1 6ET
+                    <p><b>Phone: </b>02890 313 818
+                    <p><b>Email: </b>sales.ni@watercoolerworld.com
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

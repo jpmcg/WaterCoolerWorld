@@ -1,31 +1,113 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@model IEnumerable<WaterCoolerWorld.Models.Testimonial>
+@{
+    ViewBag.Title = "Home";
 }
-
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
-
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+@Html.Partial("_CarouselParital")
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h4 class="text-center wcc-welcome">Welcome To</h4>
+            <h1 class="wcc-h1 text-center">Water Cooler World</h1>
+            <hr class="hr-blue wcw-small-margin-top"/>
+            <div class="row wcw-med-margin-top">
+                <div class="col-md-6">
+                    <p>
+                        Our aim at Water Cooler World is to provide a reliable first class service to you in the simplest and most cost effective way. We provide our customers with quality products and unrivalled levels of service excellence.
+                        Our water comes from natural springs and is carefully selected by experts and stringently tested before being extracted by environmentally friendly methods.
+                    </p>
+                    <p>
+                        Our aim at Water Cooler World is to provide a reliable first class service to you in the simplest and most cost effective way. We provide our customers with quality products and unrivalled levels of service excellence.
+                        Our water comes from natural springs and is carefully selected by experts and stringently tested before being extracted by environmentally friendly methods.
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <img class="img-responsive" src="~/Images/wcw3.jpg"/>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+<div id="myCarousel2" class="carousel slide" data-ride="carousel">
+
+    <div class="carousel-inner" role="listbox">
+        @{
+            var active = "active";
+        }
+        @foreach (var testimonial in Model)
+        {
+            <div class="item @active carousel-small-outer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="carousel-small-caption text-center">
+                                <h1 class="text-center"><q>@testimonial.Quote</q></h1>
+                                <p class="text-center">@testimonial.CustomerName</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            active = "";
+        }
+    </div>
+      <a class="left carousel-control" href="#myCarousel2" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel2" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div><!-- /.carousel -->
+
+    <div class="container">
+      <div class="row wcw-med-margin-top">              
+         <div class="col-sm-12">
+           <h1 class="wcc-h1 text-center">Browse Our Products</h1>
+          <hr class="hr-blue wcw-small-margin-top"/>    
+           <p>Water Cooler World not only offer bottled coolers, they also supply and fit plumbed in systems (Point of Use) and offer a wide and diverse range of products ranging from high-capacity hot/cold water coolers to sports bottles. Water Cooler World has a planned and effective approach to penetrating the industry in all areas; Schools, Offices, Homes, Factories, Building sites - Water Cooler World has products for all of these and more. </p>
+           <hr class="hr-blue"/>  
+         </div>
+           
+         <div class="col-sm-6 col-md-3">
+             <a href="@Url.Action("Mains", "Coolers")">
+                 <div class="item-outer">
+                     <img class="center-block indexPage" src="~/Images/link1b.png" />
+                     <div class="linkText">
+                         Mains Coolers
+                     </div>
+                 </div>
+             </a>            
+          </div>                   
+          <div class="col-sm-6 col-md-3">
+              <a href="@Url.Action("Bottle", "Coolers")">
+                  <div class="item-outer">
+                      <img class="center-block indexPage" src="~/Images/link2.jpg" />
+                      <div class="linkText">
+                          Bottle Coolers
+                      </div>
+                  </div>
+              </a>             
+          </div>              
+         <div class="col-sm-6 col-md-3">
+             <a href="@Url.Action("Coffee", "Coolers")">
+                 <div class="item-outer">
+                     <img class="center-block indexPage" src="~/Images/link3.png" />
+                     <div class="linkText">
+                         Coffee Machines
+                     </div>
+                 </div>
+             </a>                
+          </div>
+         <div class="col-sm-6 col-md-3">
+             <a href="@Url.Action("Contact", "Home")">
+                 <div class="item-outer">
+                     <img class="center-block indexPage" src="~/Images/link4.png" />
+                     <div class="linkText">
+                         Contact Us
+                     </div>
+                 </div>
+             </a>            
+          </div>
+      </div>
+    </div>

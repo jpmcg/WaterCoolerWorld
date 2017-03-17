@@ -1,0 +1,22 @@
+﻿.navbar-header{
+    height: 65px;
+}
+
+.navbar-brand {
+    padding: 5px 15px;
+    font-size: 18px;
+    line-height: 20px
+}
+
+.navbar-nav li a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.carousel-small-outer{
+    max-height: 400px;
+}
+
+.top-logo{
+    height: 50px;
+}

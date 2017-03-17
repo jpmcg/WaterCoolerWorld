@@ -1,0 +1,38 @@
+﻿@model IEnumerable<WaterCoolerWorld.Models.Cooler>
+
+@{
+    ViewBag.Title = "Section";
+}
+
+@Html.Partial("_CarouselParital")
+
+
+<div class="container">
+    <div class="row wcw-med-margin-top">
+        <div class="col-xs-12">
+            <h1 class="wcc-h1 text-center">Mains Water Coolers</h1>
+            <hr class="hr-blue" />
+        </div>
+        <div class="col-sm-12">
+            <p>
+                Water Cooler World not only offer bottled coolers, they also supply and fit plumbed in systems (Point of Use) and offer a wide and diverse range of products ranging from high-capacity hot/cold water coolers to sports bottles.
+            </p><p>Water Cooler World has a planned and effective approach to penetrating the industry in all areas; Schools, Offices, Homes, Factories, Building sites - Water Cooler World has products for all of these and more. In addition to a diverse range of products, the customer service element and ethics of the company add to the competitive advantage over other water cooler companies, large or small.</p>
+        </div>
+        <hr class="hr-blue"/>
+        @foreach (var cooler in Model)
+        {
+            <div class="col-sm-6 col-md-3">
+                <div class="item-outer">
+                    <img class="center-block" src="img/cooler1.png" />
+                    <div class="item-text">
+                        <p class="item-text-header text-center">@cooler.Name</p>
+                        <p class="item-text-body">@cooler.ShortDescription</p>
+                        <a href="@Url.Action("Cooler", "Coolers", new {id = cooler.Id})">
+                            <button class="btn btn-info center-block">More Info <span class="glyphicon glyphicon-chevron-right"></span></button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

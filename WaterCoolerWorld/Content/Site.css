@@ -1,24 +1,181 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700%7CRaleway:200,300,400,700');
+body {
+    font-family:'Raleway', sans-serif;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+.wcc-h1{
+    font-weight: 500;
+    margin-top: 0px;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+.wcc-h4{
+    font-weight: bold;   
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+.wcc-h4 > span{
+     border-bottom: 2px solid #00B7EB;
+}
+
+.wcc-welcome{
+    margin-top: 30px;    
+    font-style: italic;
+}
+
+a:hover {
+     text-decoration: none;
+}
+
+.wcw-med-margin-top{
+    margin-top: 40px;
+}
+
+.wcw-small-margin-top{
+    margin-top: 5px;
+}
+
+
+.small-padding{
+    padding: 3px;
+}
+
+/*--------------- Navbar -----------*/
+.navbar {
+	border-radius:0;
+	border:0;
+	font-family:'Raleway', sans-serif;
+	font-size:16px;
+	font-weight:400;
+	margin:0; 
+}
+
+.navbar-default .navbar-nav>li>a {
+        color:#777;
+        /*border-bottom: 1px solid #00B7EB;*/
+}
+
+
+.navbar-default .navbar-nav>li>a:hover {
+        color:#00B7EB;
+}
+
+.navbar-default{
+    background-color: #fff;
+}
+
+.navbar-nav li a {
+    padding-top: 30px;
+    margin-bottom: 20px;
+    padding: 30px 0px 0px 0px;
+    margin: 0px 15px 30px 15px;
+}
+
+.navbar-brand {
+    padding: 10px 15px;
+}
+
+.top-logo{
+    height: 60px;
+}
+/*----------- Navbar End -----------*/
+
+/*----------- Carousel -----------*/
+#myCarousel{
+    max-height: 400px;
+    border-top: 2px solid #00B7EB;
+}
+
+.carousel-control.right {
+    background: none;
+}
+
+.carousel-control.left {
+    background: none;
+}
+
+.carousel-small-outer{
+    background: #00B7EB;
+    color: #fff;
+    min-height: 130px;
+    max-height: 130px;
+}
+
+#myCarousel2{
+    margin-top: 30px;
+}
+
+.carousel-small-caption{
+    margin-top: 30px;
+    /*margin-left: 120px;;*/
+    /*margin-right: auto;*/
+
+}
+
+/*--------- Carousel End -----------*/
+
+.hr-blue{
+    max-width: 400px;
+    border-color: #00B7EB;
+    border: 1px solid #00B7EB;
+}
+
+.item-outer{
+    border: 1px solid #ccc;    
+    border-radius: 5px;
+    margin-bottom: 20px; 
+}
+
+.item-outer > img{
+    max-width: 90%;
+}
+
+.item-outer > img.indexPage{
+    max-width: 95%;
+}
+
+.item-text{
+    padding: 10px;
+    border-top: 1px solid #ccc;    
+}
+
+.item-text-header{    
+    font-weight: bold
+}
+
+.item-text-body{
+    min-height: 110px;
+}
+
+/*--------- Footer -----------*/
+
+footer{
+    margin-top: 20px;
+    background: #272727;
+    color: #999;
+    min-height: 100px;
+}
+
+/*--------- Footer End -----------*/
+
+.btn-info{
+    background-color: #00B7EB;
+}
+
+.linkText{
+    padding: 10px;
+    border-top: 1px solid #ccc;    
+    text-align: center;
+    background-color: #00B7EB;
+    color: #fff;
+    font-weight: bold;
+}
+
+.full-width > img{
+    width: 100%;
+    max-width: 100%;
+}
+
+.subheading{
+    border-bottom: 2px solid #00B7EB;
+    padding-bottom: 5px;
+    display: inline-block;
 }

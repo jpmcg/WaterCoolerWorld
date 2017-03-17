@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+}
+<div class="container" style="min-height: 500px;">
+    <h2>Add Image</h2>
+    <div class="col-sm-6">
+        @using (Html.BeginForm("AddImage", "Coolers", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <input type="hidden" name="coolerId" value="@ViewBag.CoolerId"/>
+            <div class="form-group">
+                <label class="control-label" for="file">Filename:</label>
+                <input class="form-control" type="file" name="file" id="file" />
+            </div>
+            <input class="form-control btn btn-info" type="submit" />
+        }
+    </div>
+   
+</div>

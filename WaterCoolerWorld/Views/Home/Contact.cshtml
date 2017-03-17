@@ -1,17 +1,53 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
-
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
-
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+@Html.Partial("_CarouselParital")
+<div class="container">
+    <div class="row wcw-med-margin-top">
+        <div class="col-xs-12">
+            <h1 class="wcc-h1 text-center">Contact Us</h1>
+            <hr class="hr-blue" />
+            <p>
+                To try out our superior service please call 02890 313 818 today and arrange a free trial, and see for yourself how Water Cooler World NI can help your business.
+            </p>
+            <p>
+                At Water Cooler World we strive to deliver the best quality products and unrivalled levels of service excellence. Please feel free to contact our staff with any queries or to arrange your no obligation free trial.
+            </p>
+            <h4 class="subheading">
+                <span class="glyphicon glyphicon-envelope"></span> Send Us A Message
+            </h4>
+        </div>
+        <div class="col-sm-8">
+            <form>
+                <div class="form-group">
+                    <label for="Name">Name</label>
+                    <input type="text" class="form-control" id="Name" placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea type="textarea" class="form-control" id="message" placeholder="Your message..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-info form-control"><span class="glyphicon glyphicon-envelope"></span> Send</button>
+            </form>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-primary wcw-small-margin-top" style="margin-top: 25px;">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><span class="ion-android-system-home"></span> Information</h3>
+                </div>
+                <div class="panel-body">
+                    <address class="no-margin">
+                        <strong>Water Cooler World</strong><br /><br />
+                        <p><b><span class="glyphicon glyphicon-home"></span> </b>Suite 3 Fountain Centre,<br />Collage Street,<br />Belfast BT1 6ET
+                        <p><b><span class="glyphicon glyphicon-phone"></span> </b>02890 313 818
+                        <p><b><span class="glyphicon glyphicon-envelope"></span> </b>sales.ni@watercoolerworld.com
+                    </address>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

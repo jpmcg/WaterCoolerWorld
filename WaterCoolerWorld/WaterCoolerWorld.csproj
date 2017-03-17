@@ -196,32 +196,64 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CoolersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\TestimonialsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703171207374_Initial.cs" />
+    <Compile Include="Migrations\201703171207374_Initial.Designer.cs">
+      <DependentUpon>201703171207374_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Cooler.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Testimonial.cs" />
+    <Compile Include="Models\WCWImage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.sm.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\carouselHolder.png" />
+    <Content Include="Images\carouselHolder2.png" />
+    <Content Include="Images\carouselHolder3.png" />
+    <Content Include="Images\cooler1.png" />
+    <Content Include="Images\cooler2.png" />
+    <Content Include="Images\link1.png" />
+    <Content Include="Images\link1a.png" />
+    <Content Include="Images\link1b.png" />
+    <Content Include="Images\link2.jpg" />
+    <Content Include="Images\link2.png" />
+    <Content Include="Images\link3.png" />
+    <Content Include="Images\link4.jpg" />
+    <Content Include="Images\link4.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\wcw2.jpg" />
+    <Content Include="Images\wcw3.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Properties\PublishProfiles\watercoolerworld - Web Deploy.pubxml" />
+    <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.1.1.js" />
+    <Content Include="Scripts\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.1.1.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -265,6 +297,24 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Coolers\Create.cshtml" />
+    <Content Include="Views\Coolers\Delete.cshtml" />
+    <Content Include="Views\Coolers\Details.cshtml" />
+    <Content Include="Views\Coolers\Edit.cshtml" />
+    <Content Include="Views\Coolers\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout_WCW.cshtml" />
+    <Content Include="Views\Shared\_CarouselParital.cshtml" />
+    <Content Include="Views\Coolers\BottleSection.cshtml" />
+    <Content Include="Views\Coolers\Item.cshtml" />
+    <Content Include="Views\Shared\_Layout_WCW_Admin.cshtml" />
+    <Content Include="Views\Testimonials\Create.cshtml" />
+    <Content Include="Views\Testimonials\Delete.cshtml" />
+    <Content Include="Views\Testimonials\Details.cshtml" />
+    <Content Include="Views\Testimonials\Edit.cshtml" />
+    <Content Include="Views\Testimonials\Index.cshtml" />
+    <Content Include="Views\Images\Add.cshtml" />
+    <Content Include="Views\Coolers\MainsSection.cshtml" />
+    <Content Include="Views\Coolers\CoffeeSection.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -275,7 +325,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201703171207374_Initial.resx">
+      <DependentUpon>201703171207374_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
