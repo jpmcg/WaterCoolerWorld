@@ -12,18 +12,7 @@ namespace WaterCoolerWorld.Controllers
         ApplicationDbContext db = new ApplicationDbContext();
         public ActionResult Index()
         {
-            var testimonials = db.Testimonials.ToList();
-           /* var testimonials = new List<Testimonial>();
-            testimonials.Add(new Testimonial
-            {
-                Quote = "Our staff love the water coolers we got from Water Cooler World",
-                CustomerName = "Joe Bloggs"
-            });
-            testimonials.Add(new Testimonial
-            {
-                Quote = "Water Cooler Worlds quick delivery means we never go thirsty!",
-                CustomerName = "Joe Bloggs"
-            });*/
+            var testimonials = db.Testimonials.Where(t=>t.Active).ToList();
             return View("Index", testimonials);
         }
 
@@ -39,6 +28,12 @@ namespace WaterCoolerWorld.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        [Authorize]
+        public ActionResult Admin()
+        {
+            return View("Admin");
         }
     }
 }

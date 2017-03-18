@@ -6,13 +6,20 @@
 }
 <hr/>
 <div class="container" style="min-height: 500px">
-    <h2><span style="border-bottom: 2px solid #00B7EB; padding-right: 10px;">All Coolers</span></h2>
-
-    <p>
-        <a href="@Url.Action("Create", "Coolers")">
-            <button class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add Cooler</button>
-        </a>
-    </p>
+    <a href="@Url.Action("Admin", "Home")">
+        <button class="btn btn-info"><span class="glyphicon glyphicon-chevron-left"></span> Admin</button>
+    </a>
+    <div class="row">
+        <div class="col-xs-9">
+                <h2><span style="border-bottom: 2px solid #00B7EB; padding-right: 10px;">All Coolers</span></h2>
+        </div>
+        <div class="col-xs-3">
+            <a href="@Url.Action("Create", "Coolers")">
+                <button class="btn btn-success pull-right" style="margin: 20px 0 10px 0"><span class="glyphicon glyphicon-plus"></span> Add Cooler</button>
+            </a>
+        </div>
+    </div>
+    
     <table class="table">
         <tr>
             <th>
@@ -29,6 +36,9 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Active)
             </th>
             <th></th>
         </tr>
@@ -52,12 +62,16 @@
                     @Html.DisplayFor(modelItem => item.Price)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Details", "Cooler", new { id = item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    @Html.DisplayFor(modelItem => item.Active)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new {id = item.Id}) |
+                    @Html.ActionLink("Details", "Cooler", new {id = item.Id}) |
+                    @Html.ActionLink("Delete", "Delete", new {id = item.Id})
                 </td>
             </tr>
         }
 
     </table>
+    <hr/>
 </div>

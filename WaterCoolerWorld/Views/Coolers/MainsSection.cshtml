@@ -26,7 +26,7 @@
                     <img class="center-block" src="img/cooler1.png" />
                     <div class="item-text">
                         <p class="item-text-header text-center">@cooler.Name</p>
-                        <p class="item-text-body">@cooler.ShortDescription</p>
+                        <p class="item-text-body">@Html.Raw(Html.Encode(@cooler.ShortDescription).Replace("\n", "<br />"))</p>
                         <a href="@Url.Action("Cooler", "Coolers", new {id = cooler.Id})">
                             <button class="btn btn-info center-block">More Info <span class="glyphicon glyphicon-chevron-right"></span></button>
                         </a>

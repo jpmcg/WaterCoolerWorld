@@ -15,8 +15,11 @@
         <div class="col-sm-6">
             <hr class="hr-blue" />
             <h1 class="wcc-h1 text-center">@Model.Name</h1>
-            <hr class="hr-blue" />
-            @Model.FullDescription
+            <hr class="hr-blue"/>
+            @Html.Raw(Html.Encode(@Model.FullDescription).Replace("\n", "<br />"))
+            <hr class="hr-blue"/>
+            <p style="text-align: center; font-size: 2em;"><strong>Prices from: £@Model.Price</strong></p>
+       @*   @Html.Raw(@Model.FullDescription)*@
         </div>
         <hr />
         <div class="col-sm-12">

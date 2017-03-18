@@ -6,7 +6,7 @@
     <title>@ViewBag.Title - Water Cooler World</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+    <link media='only screen and (max-width:767px)' href="~/Content/Site.sm.css?v=1" rel="stylesheet">
 </head>
 <body>
 <nav class="navbar navbar-default">
@@ -30,7 +30,9 @@
                 <li>@Html.ActionLink("Mains Coolers", "Mains", "Coolers")</li>
                 <li>@Html.ActionLink("Coffee Machines", "Coffee", "Coolers")</li>
                 <li>@Html.ActionLink("Contact Us", "Contact", "Home")</li>
+                @Html.Partial("_LoginPartial_WCW")
             </ul>
+            
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>

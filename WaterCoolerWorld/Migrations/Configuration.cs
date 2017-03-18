@@ -1,3 +1,7 @@
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using WaterCoolerWorld.Models;
+
 namespace WaterCoolerWorld.Migrations
 {
     using System;
@@ -26,6 +30,19 @@ namespace WaterCoolerWorld.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+          /*  var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+            var passwordHash = new PasswordHasher();
+
+            if (!context.Users.Any(u => u.UserName == "Andrew"))
+            {
+                var user = new ApplicationUser
+                {
+                    UserName = "Andrew",
+                    Email = "andrew@andrew.com",
+                    PasswordHash = passwordHash.HashPassword("123456")
+                };
+                userManager.Create(user);
+            }*/
         }
     }
 }

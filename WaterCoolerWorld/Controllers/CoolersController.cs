@@ -11,6 +11,7 @@ using WaterCoolerWorld.Models;
 
 namespace WaterCoolerWorld.Controllers
 {
+    [Authorize]
     public class CoolersController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -21,28 +22,31 @@ namespace WaterCoolerWorld.Controllers
             return View(db.Coolers.ToList());
         }
 
+        [AllowAnonymous]
         public ActionResult Bottle()
         {
-            var coolers = db.Coolers.Where(c=>c.Categrory==CoolerCatergory.BottleCooler).ToList();
+            var coolers = db.Coolers.Where(c=>c.Categrory==CoolerCatergory.BottleCooler && c.Active).ToList();
             GetImages(coolers);
             return View("BottleSection", coolers);
         }
 
+        [AllowAnonymous]
         public ActionResult Mains()
         {
-            var coolers = db.Coolers.Where(c => c.Categrory == CoolerCatergory.MainsCooler).ToList();
+            var coolers = db.Coolers.Where(c => c.Categrory == CoolerCatergory.MainsCooler && c.Active).ToList();
             GetImages(coolers);
             return View("MainsSection", coolers);
         }
 
+        [AllowAnonymous]
         public ActionResult Coffee()
         {
-            var coolers = db.Coolers.Where(c => c.Categrory == CoolerCatergory.CoffeeMachine).ToList();
+            var coolers = db.Coolers.Where(c => c.Categrory == CoolerCatergory.CoffeeMachine && c.Active).ToList();
             GetImages(coolers);
             return View("CoffeeSection", coolers);
         }
 
-        public Cooler GetImageForCooler(Cooler cooler)
+        private Cooler GetImageForCooler(Cooler cooler)
         {
             var images = db.Images.Where(i => i.CoolerId == cooler.Id).ToList();
             cooler.Image = images.Count > 0 ? images[0] : new WcwImage { Name = "defaultCooler.png" };
@@ -58,12 +62,11 @@ namespace WaterCoolerWorld.Controllers
             }
         }
 
+        [AllowAnonymous]
         public ActionResult Cooler(int id)
         {
             var cooler = db.Coolers.First(c => c.Id == id);
             cooler = GetImageForCooler(cooler);
-         //  var images = db.Images.Where(i => i.CoolerId == id).ToList();
-          //  cooler.Image = images.Count > 0 ? images[0] : new WcwImage {Name = "defaultCooler.png"};
             return View("Item", cooler);
         }
 
@@ -93,7 +96,7 @@ namespace WaterCoolerWorld.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Categrory,ShortDescription,FullDescription,Price")] Cooler cooler)
+        public ActionResult Create([Bind(Include = "Id,Name,Categrory,ShortDescription,FullDescription,Price,Active")] Cooler cooler)
         {
             if (ModelState.IsValid)
             {
@@ -125,7 +128,8 @@ namespace WaterCoolerWorld.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Categrory,ShortDescription,FullDescription,Price")] Cooler cooler)
+        [ValidateInput(false)]
+        public ActionResult Edit([Bind(Include = "Id,Name,Categrory,ShortDescription,FullDescription,Price,Active")] Cooler cooler)
         {
             if (ModelState.IsValid)
             {

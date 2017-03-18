@@ -315,6 +315,8 @@
     <Content Include="Views\Images\Add.cshtml" />
     <Content Include="Views\Coolers\MainsSection.cshtml" />
     <Content Include="Views\Coolers\CoffeeSection.cshtml" />
+    <Content Include="Views\Home\Admin.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial_WCW.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

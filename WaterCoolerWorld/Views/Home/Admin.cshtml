@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Admin";
+    Layout = "~/Views/Shared/_Layout_WCW_Admin.cshtml";
+}
+
+<hr />
+<div class="container">
+    <div class="row" style="min-height: 500px; background-color: #fff; padding: 30px;">
+        <div class="col-md-12">
+            <h2 class="center-block"><span style="border-bottom: 2px solid #00B7EB; padding-right: 10px;">Admin</span></h2>
+        </div>
+        <div class="col-xs-6" style="margin-bottom: 20px">
+            <a href="@Url.Action("Index", "Coolers")">
+                <button class="btn btn-info" style="width: 100%; min-height: 200px;"><span class="glyphicon glyphicon-tint" aria-hidden="true"></span> Coolers</button>
+            </a>
+        </div>
+        <div class="col-xs-6" style="margin-bottom: 20px">
+            <a href="@Url.Action("Index", "Testimonials")">
+                <button class="btn btn-info" style="width: 100%; min-height: 200px;"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> Testimonials</button>
+            </a>
+        </div>
+    </div>
+    
+</div>
